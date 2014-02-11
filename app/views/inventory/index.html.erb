@@ -1,0 +1,73 @@
+<header class="jumbotron">
+  <div class="inner">
+    <div class="container">
+      <h1 style="letter-spacing:-3px; margin-bottom:20px;">Notions Inventory Updater</h1>
+      <p class="lead">Follow the steps on the left-hand side to run the inventory updater</p>
+    </div><!-- /container -->
+  </div>
+</header>
+
+<div class="row">
+  <div class="span3">
+    <div class="well">  
+      <h3>Step 1</h3>
+      <hr style="margin:2px 0 7px"/>
+      <p>Save the notions inventory report as a .txt file</p>
+    
+      <br/>
+    
+      <h3>Step 2</h3>
+      <hr style="margin:2px 0 7px"/>
+      <p>Choose the inventory file you want to use for updating</p>
+
+      <br/>
+
+      <h3>Step 3</h3>
+      <hr style="margin:2px 0 7px"/>
+      <p>Click the update inventory button</p>
+    
+      <br/>
+
+      <h3>Step 4</h3>
+      <hr style="margin:2px 0 7px"/>
+      <p>Wait....the current updater will take between 1 and 1.5 hours</p>
+    
+      <br/>
+    </div>
+    
+    <h3>Additional Docs</h3>
+    <p>You can become an expert pretty quickly by reading up on these docs:</p>
+    
+    <ul>
+      <li>
+        <%= link_to 'API documentation', 'http://www.shopify.com/developers/api/' %>
+        <span class="note">Learn what you can do with the Shopify API</span>
+      </li><br/>
+      <li>
+        <%= link_to 'Bootstrap documentation', 'http://twitter.github.com/bootstrap/' %>
+        <span class="note">Find out what you can do with Twitter Bootstrap</span>
+      </li><br/>
+      <li>
+        <%= link_to 'Wiki', 'http://wiki.shopify.com/' %>
+        <span class="note">Get more information and share your knowledge</span>
+      </li><br/>
+      <li>
+        <%= link_to 'Forum', 'http://forums.shopify.com/community' %>
+        <span class="note">Ask questions and see what others already wanted to know</span>
+      </li>
+    </ul>
+  </div> <!-- span3 / left-column -->
+
+
+  <div class="span8 offset1">
+    <h2>Click button to update inventory</h2>
+    <%= form_for @file, url:create_path do |f| %>
+      <%= f.file_field :file %>
+      <%= submit_tag 'Update Notions Inventory', class: 'btn btn-primary', id: 'update_button' %>
+    <% end %>
+    <div class='status'>
+      <p>Updating Inventory...</p>
+      <%= image_tag "loading_icon.gif" %>
+    </div>
+  </div> <!-- span8 / right-column -->
+</div>
