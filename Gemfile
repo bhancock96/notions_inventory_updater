@@ -28,6 +28,7 @@ gem 'pg'
 gem 'rails_12factor'
 gem "less-rails-bootstrap"
 gem "therubyracer", :platforms => :ruby
+gem 'resque', "~> 1.22.0", :require => 'resque/server'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
