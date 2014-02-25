@@ -20,6 +20,7 @@ class InventoryController < ApplicationController
 		sess = session[:shopify].token
 		notions_file = InventoryFile.last
 		Resque.enqueue(UpdateWorker, {notions_file_id: notions_file.id, token: sess})
+		notions_file.delete
 		redirect_to root_path
 	end
 end
