@@ -34,5 +34,6 @@ class UpdateWorker
 			end
   	    end
   	puts "Update process complete"
+  	notions_file.delete
 	end
 end
